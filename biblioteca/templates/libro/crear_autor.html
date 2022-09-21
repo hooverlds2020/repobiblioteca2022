@@ -5,7 +5,9 @@
 {% endblock titulo %}
 
 {% block body %}
-      {% csrf_token %}
-        {{ autor_form.as_p }}
-        <button type = "submit">Crear</button>
-{% endblock body %}
+  <form method="post">
+    {% csrf_token %}
+      {{ autor_form.as_p }}  
+    <button type = "submit">Crear</button>
+  </form>
+{% endblock body %} 
