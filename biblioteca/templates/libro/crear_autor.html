@@ -1,13 +1,26 @@
 {% extends 'index.html' %}
-
 {% block titulo %}
     Creación de Autores
 {% endblock titulo %}
-
 {% block body %}
-  <form method="post">
-    {% csrf_token %}
-      {{ autor_form.as_p }}  
-    <button type = "submit">Crear</button>
-  </form>
+<form method="post">
+  {% csrf_token %}
+  {% if error %}
+    <h2>{{ error }}</h2>
+  {% else %}
+    <!-- {{ autor_form.as_p }} -->
+    <label>Nombres</label>
+    <input type="text" name="nombre">
+    <label>Apellidos</label>
+    <input type="text" name="apellidos">
+    <label>Nacionalidad</label>
+    <input type="text" name="nacionalidad">
+    <label>Descripción</label>
+    <input type="text" name="descripcion">
+    <button type = "submit">Crear</button>  
+  {% endif %}  
+</form>
+
 {% endblock body %} 
+
+<!-- CRUD CON PYTHON PURO Y VISTAS BASADAS EN FUNCIONES -->

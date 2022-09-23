@@ -9,6 +9,7 @@ class Autor(models.Model):
     nacionalidad = models.CharField('Nacionalidad', max_length = 100, blank = False, null = False)
     #descripcion = models.TextField('Descripción', blank = False, null = False)
     descripcion = models.CharField('Descripción', max_length=200, blank = True, null = True)
+    estado = models.BooleanField('Estado', default=True)
     fecha_creacion = models.DateField('Fecha de creación', auto_now = True, auto_now_add = False)
 
     class Meta:
@@ -34,3 +35,4 @@ class Libro(models.Model):
     def __str__(self):
         return self.titulo
 
+# CRUD CON PYTHON PURO Y VISTAS BASADAS EN FUNCIONES
